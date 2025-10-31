@@ -1,0 +1,127 @@
+/* Estilos específicos para o Jogo Termo (MAIS RESPONSIVO) */
+
+.termo-container {
+    max-width: 500px;
+    width: 95%;
+}
+
+.termo-container header h1 {
+    margin-top: 0; /* Remove margem do topo */
+    margin-bottom: 10px; /* Diminui margem de baixo */
+}
+
+/* Deixa o contador de vitórias menor */
+.streak-counter {
+    margin: 5px 0 10px 0;
+    font-size: 0.9em;
+    color: var(--cor-texto);
+}
+
+.termo-grid {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    
+    /* Diminui o tamanho do grid */
+    width: clamp(250px, 60vmin, 300px); 
+    height: clamp(300px, 72vmin, 360px);
+    
+    margin: 10px auto; /* Diminui a margem */
+}
+
+.tile {
+    font-size: clamp(1.5em, 5vmin, 2.2em);
+    font-weight: bold;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    border: 2px solid var(--cor-borda);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease, border-color 0.5s ease, transform 0.3s ease;
+}
+
+.tile.correct { background-color: #3aa394; border-color: #3aa394; color: white; }
+.tile.present { background-color: #d3ad69; border-color: #d3ad69; color: white; }
+.tile.absent { background-color: var(--cor-borda); border-color: var(--cor-borda); opacity: 0.8; }
+
+.tile.flip { animation: flip 0.6s ease forwards; }
+@keyframes flip { 0% { transform: scaleY(1); } 50% { transform: scaleY(0); } 100% { transform: scaleY(1); } }
+
+.message-area { min-height: 20px; margin: 5px 0; font-weight: 600; }
+
+/* Teclado Virtual (Diminuído) */
+.keyboard { margin-top: 15px; }
+.keyboard-row { display: flex; justify-content: center; margin-bottom: 4px; width: 100%; }
+
+.key {
+    font-family: inherit;
+    font-weight: bold;
+    font-size: clamp(0.7em, 2.5vmin, 1em);
+    padding: 0;
+    margin: 0 2px;
+    height: 40px; /* Altura da tecla diminuída */
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    background-color: #818384;
+    color: white;
+    flex: 1;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    min-width: 20px;
+}
+.key:hover { background-color: #999b9c; }
+.key.large { flex: 1.5; }
+.key.correct { background-color: #3aa394; }
+.key.present { background-color: #d3ad69; }
+.key.absent { background-color: var(--cor-borda); opacity: 0.7; }
+
+.tile.shake { animation: shake 0.6s ease; }
+@keyframes shake { 10%, 90% { transform: translateX(-1px); } 20%, 80% { transform: translateX(2px); } 30%, 50%, 70% { transform: translateX(-4px); } 40%, 60% { transform: translateX(4px); } }
+
+/* Modal de Fim de Jogo (sem alterações) */
+.end-game-modal {
+    display: none; position: fixed;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center; align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background-color: var(--cor-container);
+    padding: 30px 40px; border-radius: 15px;
+    border: 1px solid var(--cor-primaria);
+    text-align: center;
+    box-shadow: 0 0 25px rgba(88, 166, 255, 0.4);
+    max-width: 400px; width: 80%;
+}
+#modal-title { font-size: 2.2em; color: var(--cor-primaria); margin-bottom: 15px; font-weight: 700; }
+#modal-word { font-size: 1.8em; color: var(--cor-texto); margin-bottom: 25px; font-weight: 600; }
+#modal-streak { font-size: 1.2em; color: var(--cor-secundaria); margin-bottom: 25px; }
+#play-again-button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em; font-weight: 600;
+    color: var(--cor-fundo);
+    background-color: var(--cor-secundaria);
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 10px;
+    padding: 12px 25px; cursor: pointer;
+    transition: all 0.3s ease;
+}
+#play-again-button:hover {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 15px var(--cor-primaria);
+}
+
+/* --- Estilo para a caixinha em foco --- */
+.tile.current-row.focused {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 10px var(--cor-primaria);
+}

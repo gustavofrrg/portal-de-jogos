@@ -1,0 +1,104 @@
+futebol
+basquete
+vôlei
+tênis
+natação
+atletismo
+handebol
+ginástica
+boxe
+judô
+karatê
+taekwondo
+ciclismo
+surf
+skate
+esqui
+snowboard
+golfe
+rugby
+críquete
+beisebol
+hóquei
+polo aquático
+badminton
+tênis de mesa
+esgrima
+levantamento de peso
+luta olímpica
+tiro com arco
+canoagem
+remo
+vela
+hipismo
+escalada
+billar
+boliche
+dardo
+sinuca
+xadrez
+corrida de carros
+motocross
+râguebi
+futsal
+kickboxing
+muay thai
+jiu-jítsu
+capoeira
+parkour
+triatlo
+pentatlo moderno
+biatlo
+patinação artística
+patinação de velocidade
+curling
+bobsled
+skeleton
+luge
+salto de esqui
+combinado nórdico
+hóquei no gelo
+patinação no gelo
+snowboard cross
+esqui estilo livre
+esqui alpino
+esqui cross-country
+orientação
+paraquedismo
+mergulho
+pesca esportiva
+caça esportiva
+escalada em rocha
+montanhismo
+rafting
+canyoning
+paintball
+airsoft
+tiro esportivo
+equitação
+adestramento
+salto
+polo
+corrida de cavalos
+turfe
+automobilismo
+motociclismo
+ciclismo de estrada
+ciclismo de pista
+mountain bike
+bmx
+vela oceânica
+vela de monotipo
+windsurf
+kitesurf
+wakeboard
+esqui aquático
+jet ski
+bodyboard
+frescobol
+peteca
+bocha
+malha
+críquete de praia
+vôlei de praia
+futebol de areia

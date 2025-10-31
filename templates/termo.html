@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='termo.css') }}">
+</head>
+<body>
+    <div class="game-container termo-container">
+        <header>
+            <a href="/" class="back-button">← Voltar ao Menu</a>
+            <h1>TERMO</h1>
+            <p class="streak-counter">Vitórias Seguidas: <span id="win-streak-counter">0</span></p>
+        </header>
+
+        <main>
+            <div id="termo-grid" class="termo-grid">
+                </div>
+            <div id="message-area" class="message-area"></div>
+            <div id="keyboard" class="keyboard">
+                </div>
+        </main>
+
+        <div id="end-game-modal" class="end-game-modal">
+            <div class="modal-content">
+                <h2 id="modal-title"></h2>
+                <p>A palavra era: <strong id="modal-word"></strong></p>
+                <p id="modal-streak">Vitórias seguidas: <strong>0</strong></p>
+                <button id="play-again-button">Jogar Novamente</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='termo.js') }}"></script>
+</body>
+</html>

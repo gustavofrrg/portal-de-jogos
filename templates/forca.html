@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='forca.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head> 
+<body>
+
+    <div id="start-menu" class="game-container">
+        <a href="/" class="back-button">← Voltar ao Menu</a>
+        <h1>BEM-VINDO AO JOGO DA FORCA</h1>
+        <div class="menu-option">
+            <label for="theme-select">Escolha um Tema:</label>
+            <select id="theme-select">
+                <option value="frutas">Frutas</option>
+                <option value="esportes">Esportes</option>
+                <option value="paises">Países</option>
+                <option value="animais">Animais</option>
+                <option value="profissoes">Profissões</option>
+                <option value="musica">Música</option>
+            </select>
+        </div>
+        <div class="menu-option">
+            <label for="difficulty-select">Escolha a Dificuldade:</label>
+            <select id="difficulty-select">
+                <option value="1">Fácil (10 erros)</option>
+                <option value="2" selected>Médio (8 erros)</option>
+                <option value="3">Difícil (6 erros)</option>
+            </select>
+        </div>
+        <button id="start-button">Iniciar Jogo</button>
+    </div>
+
+    <div id="game-container" class="game-container" style="display: none;">
+        <header>
+            <a href="/" class="back-button">← Voltar ao Menu</a>
+            <h1>JOGO DA FORCA</h1>
+        </header>
+        <main>
+            <div class="game-visuals">
+                <pre id="hangman-drawing" class="hangman-box"></pre>
+                <div class="game-info">
+                    <p>Dica: <span id="hint-text"></span></p>
+                    <p>Chances Restantes: <span id="chances-text">--</span></p>
+                    <p>Vitórias Seguidas: <span id="win-streak-counter">0</span></p>
+                </div>
+            </div>
+            <div class="word-section">
+                <div id="word-display" class="word-box"></div>
+                <div id="letters-guessed" class="letters-box">
+                    <p>Letras já tentadas:</p>
+                    <span></span>
+                </div>
+            </div>
+            <div class="game-input">
+                <p>Digite uma letra:</p>
+                <input type="text" id="letter-input" maxlength="1">
+                <button id="guess-button">Adivinhar</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="end-game-modal" class="end-game-modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Você Venceu!</h2>
+            <p>A palavra era: <strong id="modal-word"></strong></p>
+            <button id="play-again-button">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='forca.js') }}"></script>
+</body>
+</html>

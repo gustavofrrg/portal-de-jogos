@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Jogos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+</head>
+<body>
+    <div class="menu-container">
+        <h1>PORTAL DE JOGOS</h1>
+        <div class="game-grid">
+            
+            <a href="/forca" class="game-card">
+                <h2>Jogo da Forca</h2>
+                <p>Adivinhe a palavra secreta antes que seja tarde demais!</p>
+            </a>
+
+            <a href="/jogo-da-velha" class="game-card">
+                <h2>Jogo da Velha</h2>
+                <p>Desafie um amigo no clássico jogo de estratégia.</p>
+            </a>
+
+            <a href="/damas" class="game-card">
+                <h2>Jogo de Damas</h2>
+                <p>Um clássico de estratégia e captura de peças.</p>
+            </a>
+
+            <a href="/termo" class="game-card">
+                <h2>Termo</h2>
+                <p>Adivinhe a palavra secreta de 5 letras em 6 tentativas.</p>
+            </a>
+
+            </div>
+    </div>
+</body>
+</html>

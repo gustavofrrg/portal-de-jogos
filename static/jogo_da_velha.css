@@ -1,0 +1,91 @@
+#board-container {
+    position: relative;
+    margin: 20px auto;
+    width: 350px;
+    height: 350px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.cell {
+    background-color: var(--cor-container);
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #30363D; /* Um pouco mais claro que o container */
+}
+
+.cell.x {
+    color: var(--cor-primaria); /* Azul */
+    cursor: not-allowed;
+}
+
+.cell.o {
+    color: var(--cor-terciaria); /* Roxo */
+    cursor: not-allowed;
+}
+
+.status-box {
+    font-size: 1.5em;
+    min-height: 40px;
+    color: var(--cor-texto);
+}
+
+#restart-button {
+    font-family: 'Montserrat', sans-serif;
+    height: 50px;
+    font-size: 1.1em;
+    padding: 0 25px;
+    margin-top: 20px;
+    background-color: transparent;
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+#restart-button:hover {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+}
+
+.winning-line {
+    position: absolute;
+    background-color: var(--cor-secundaria); /* Dourado */
+    border-radius: 5px;
+    display: none;
+    pointer-events: none;
+}
+
+.winning-line.show {
+    display: block;
+}
+
+/* Posições das linhas (não precisam mudar) */
+.linha_0 { top: 15.5%;  width: 90%; left: 5%; height: 5px; }
+.linha_1 { top: 49%;    width: 90%; left: 5%; height: 5px; }
+.linha_2 { top: 82.5%;  width: 90%; left: 5%; height: 5px; }
+.coluna_0 { left: 15.5%; height: 90%; top: 5%; width: 5px; }
+.coluna_1 { left: 49%;   height: 90%; top: 5%; width: 5px; }
+.coluna_2 { left: 82.5%; height: 90%; top: 5%; width: 5px; }
+.diagonal_0 { width: 115%; top: 49%; left: -7.5%; height: 5px; transform: rotate(45deg); }
+.diagonal_1 { width: 115%; top: 49%; left: -7.5%; height: 5px; transform: rotate(-45deg); }

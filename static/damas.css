@@ -1,0 +1,131 @@
+#board-container {
+    margin: 20px auto;
+    width: 90vmin;
+    max-width: 600px;
+    max-height: 600px;
+    position: relative;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    border: 3px solid var(--cor-borda);
+    aspect-ratio: 1 / 1;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell.light { background-color: #c9d1d9; }
+.cell.dark { background-color: #555; }
+.cell.dark:hover { background-color: #666; }
+
+.piece {
+    position: relative; /* <-- ADICIONE ESTA LINHA */
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.piece.b { background-color: #f0f0f0; border: 2px solid #aaa; }
+.piece.p { background-color: #333; border: 2px solid #000; }
+
+.piece.king::after {
+    content: '👑';
+    font-size: 0.5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--cor-secundaria);
+    text-shadow: 0 0 3px black;
+}
+
+.cell.dark.valid-move {
+    background-color: rgba(88, 166, 255, 0.35);
+    cursor: pointer;
+}
+
+.piece.selected {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--cor-primaria);
+}
+
+.game-info-damas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+.score-box span { margin: 0 10px; font-weight: 600; }
+.status-box { font-size: 1.5em; min-height: 40px; color: var(--cor-texto); }
+
+#restart-button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--cor-primaria);
+    background-color: transparent;
+    border: 2px solid var(--cor-primaria);
+    border-radius: 10px;
+    padding: 12px 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#restart-button:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    box-shadow: 0 0 15px var(--cor-primaria);
+}
+
+.board.ia-thinking {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.board.ia-thinking .piece {
+    cursor: not-allowed;
+}
+
+.player-hud {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 150px;
+}
+
+.timer-box {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    padding: 5px 15px;
+    border-radius: 8px;
+    border: 2px solid var(--cor-borda);
+    transition: all 0.3s ease;
+}
+
+/* Estilo para o cronômetro do jogador da vez */
+.timer-box.active {
+    color: var(--cor-secundaria); /* Amarelo/Dourado */
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 10px var(--cor-secundaria);
+}
+
+/* Esconde os timers quando o modo PvC está ativo */
+.pvc-mode .timer-box {
+    display: none;
+}

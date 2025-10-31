@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Damas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='damas.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <a href="/" class="back-button">← Voltar ao Menu</a>
+            <h1>JOGO DE DAMAS</h1>
+        </header>
+
+        <main>
+            <div id="mode-selection" class="mode-selection">
+                <button id="p-vs-p-button" class="mode-button">Jogador vs Jogador</button>
+                <button id="p-vs-cpu-button" class="mode-button">Jogador vs Computador</button>
+            </div>
+
+            <div id="game-area" style="display: none;">
+
+                <div class="game-info-damas">
+                    <div class="player-hud">
+                        <span>Pretas: <span id="placar-pretas">12</span></span>
+                        <div id="timer-p" class="timer-box">05:00</div>
+                    </div>
+                    <div id="status-display" class="status-box">Carregando...</div>
+                    <div class="player-hud">
+                        <span>Brancas: <span id="placar-brancas">12</span></span>
+                        <div id="timer-b" class="timer-box">05:00</div>
+                    </div>
+                </div>
+                
+                <div id="board-container">
+                    <div id="board" class="board">
+                        </div>
+                </div>
+
+                <button id="restart-button">Reiniciar Jogo</button>
+            
+            </div> </main>
+    </div>
+    <script src="{{ url_for('static', filename='damas.js') }}"></script>
+</body>
+</html>

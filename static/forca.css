@@ -1,0 +1,142 @@
+/* Estilos específicos para o Jogo da Forca */
+
+/* Caixa do desenho da forca */
+.hangman-box {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    color: var(--cor-terciaria); /* Roxo */
+    line-height: 1;
+    white-space: pre; /* Garante a formatação do desenho */
+}
+
+/* Container para a palavra, agora usando Flexbox */
+#word-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Estilo para cada caixinha de letra */
+.word-letter {
+    font-size: 2.5em;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px;
+    width: 60px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Estilo para os espaços entre as palavras */
+.word-space {
+    width: 30px;
+}
+
+/* Caixa das letras já tentadas */
+#letters-guessed {
+    margin-top: 15px;
+    min-height: 30px;
+    font-size: 1.1em;
+}
+
+/* Seção de input do jogador */
+.game-input {
+    margin-top: 20px;
+}
+
+/* Caixa de texto para digitar a letra */
+#letter-input {
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+    text-align: center;
+    background-color: var(--cor-container);
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+/* Botão de "Adivinhar" */
+#guess-button {
+    height: 66px;
+    font-size: 1.2em;
+    padding: 0 20px;
+    margin-left: 10px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#guess-button:hover {
+    background-color: var(--cor-secundaria);
+    box-shadow: 0 0 15px var(--cor-secundaria);
+}
+
+.end-game-modal {
+    display: none; /* Começa invisível */
+    position: fixed; /* Fixado na tela, não rola com o conteúdo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro translúcido */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    z-index: 1000; /* Garante que fique por cima de tudo */
+}
+
+.modal-content {
+    background-color: var(--cor-container); /* Cor do nosso container */
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--cor-primaria); /* Borda com cor de destaque */
+    text-align: center;
+    box-shadow: 0 0 25px rgba(88, 166, 255, 0.4);
+    max-width: 400px;
+    width: 80%;
+}
+
+#modal-title {
+    font-size: 2.2em;
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+#modal-word {
+    font-size: 1.8em;
+    color: var(--cor-texto);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+#play-again-button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--cor-fundo);
+    background-color: var(--cor-secundaria); /* Botão dourado */
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 10px;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#play-again-button:hover {
+    background-color: var(--cor-primaria); /* Efeito hover azul */
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 15px var(--cor-primaria);
+}
