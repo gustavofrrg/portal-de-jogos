@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // A lógica de seleção de menu, botões, etc., é muito parecida com a do Jogo da Velha
     // e o fluxo de comunicação com o back-end também.
-    // A principal mudança está na função 'atualizarInterface'.
 
     const startMenu = document.getElementById('start-menu');
     const gameContainer = document.getElementById('game-container');
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hangmanDrawing.textContent = FORCA_VISUAL_JS[dadosDoJogo.erros];
         }
 
-        // --- LÓGICA ATUALIZADA PARA CRIAR AS "CAIXINHAS" ---
+        // --- LÓGICA PARA CRIAR AS "CAIXINHAS" ---
         wordDisplay.innerHTML = '';
         dadosDoJogo.palavra.forEach(letra => {
             const letraSpan = document.createElement('span');
@@ -47,14 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             wordDisplay.appendChild(letraSpan);
         });
-        // --- FIM DA LÓGICA ATUALIZADA ---
+        // --- FIM DA LÓGICA ---
 
         if (dadosDoJogo.status && dadosDoJogo.status !== 'em_andamento') {
             finalizarJogo(dadosDoJogo);
         }
     }
-
-    // Substitua todo o conteúdo do seu forca.js por este:
 
     function finalizarJogo(dados) {
         letterInput.disabled = true;
