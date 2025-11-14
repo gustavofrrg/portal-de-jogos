@@ -123,7 +123,7 @@ def jdv_verificar_vitoria(tabuleiro, jogador):
     # Verificar linhas
     for i in range(3):
         if all(tabuleiro[i][j] == jogador for j in range(3)): return f"linha_{i}"
-    # Verificar colunas (CORRIGIDO)
+    # Verificar colunas 
     for j in range(3):
         if all(tabuleiro[i][j] == jogador for i in range(3)): return f"coluna_{j}"
     # Verificar diagonais
@@ -133,7 +133,7 @@ def jdv_verificar_vitoria(tabuleiro, jogador):
 def jdv_verificar_empate(tabuleiro):
     return all(posicao != ' ' for linha in tabuleiro for posicao in linha)
 def fazer_jogada_ia(tabuleiro):
-    # ... (lógica da IA da Velha)
+    # lógica da IA da Velha
     for i in range(3):
         for j in range(3):
             if tabuleiro[i][j] == ' ':
@@ -162,7 +162,7 @@ def jdv_iniciar_novo_jogo(modo):
 # SEÇÃO 3: LÓGICA DO JOGO DE DAMAS
 # ====================================================================
 damas_game_state = {}
-def damas_criar_tabuleiro(): #...
+def damas_criar_tabuleiro(): 
     tabuleiro = [];
     for i in range(8):
         linha = []
@@ -174,7 +174,7 @@ def damas_criar_tabuleiro(): #...
                 else: linha.append(' ')
         tabuleiro.append(linha)
     return tabuleiro
-def damas_verificar_vitoria(tabuleiro, jogador_oponente): #...
+def damas_verificar_vitoria(tabuleiro, jogador_oponente):
     return not any(jogador_oponente in linha or jogador_oponente.upper() in linha for linha in tabuleiro)
 def damas_iniciar_novo_jogo(modo):
     global damas_game_state
@@ -283,7 +283,7 @@ def damas_fazer_jogada_ia():
             break
 
 # ====================================================================
-# SEÇÃO 4: LÓGICA DO JOGO TERMO (NOVO!)
+# SEÇÃO 4: LÓGICA DO JOGO TERMO 
 # ====================================================================
 termo_game_state = {}
 TERMO_TAMANHO_PALAVRA = 5
@@ -460,7 +460,7 @@ def damas_ia_move_endpoint():
             damas_game_state["jogador_atual"] = 'b'
     return jsonify(damas_game_state)
 
-# --- API TERMO (NOVO!) ---
+# --- API TERMO  ---
 @app.route("/termo/start", methods=['POST'])
 def termo_start_game():
     sucesso = termo_iniciar_novo_jogo()
