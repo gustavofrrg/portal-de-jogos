@@ -1,5 +1,3 @@
-// Arquivo: static/damas.js (VERSÃO FINAL SEM TIMER NO PVC)
-
 document.addEventListener('DOMContentLoaded', () => {
     // --- Seleção de Elementos ---
     const modeSelection = document.getElementById('mode-selection');
@@ -74,13 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // --- Funções do Jogo ---
-    function limparDestaques() { /* ... (igual) ... */ }
-    function atualizarInterface(newGameState) { /* ... (igual, mas chama trocarTimer condicionalmente) ... */ }
-    async function selecionarPeca(cell, linha, coluna) { /* ... (igual) ... */ }
-    async function onCellClick(event) { /* ... (igual) ... */ }
-    async function iniciarJogo() { /* ... (igual, mas reseta e inicia o timer condicionalmente) ... */ }
+    function limparDestaques() 
+    function atualizarInterface(newGameState) 
+    async function selecionarPeca(cell, linha, coluna) 
+    async function onCellClick(event) 
+    async function iniciarJogo() 
 
-    // --- CÓDIGO COMPLETO (Copie e cole a partir daqui) ---
+    
     function limparDestaques() { document.querySelectorAll('.selected, .valid-move').forEach(el => el.classList.remove('selected', 'valid-move')); }
     
     function atualizarInterface(newGameState) {
@@ -212,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     restartButton.addEventListener('click', iniciarJogo);
     
-    // ATUALIZAÇÃO: Adiciona/Remove classe pvc-mode
+    // Adiciona/Remove classe pvc-mode
     pvpButton.addEventListener('click', () => {
         gameMode = 'pvp';
         gameContainer.classList.remove('pvc-mode'); // Remove a classe
