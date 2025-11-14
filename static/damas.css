@@ -25,7 +25,7 @@
 .cell.dark:hover { background-color: #666; }
 
 .piece {
-    position: relative; /* <-- ADICIONE ESTA LINHA */
+    position: relative; 
     width: 80%;
     height: 80%;
     border-radius: 50%;
