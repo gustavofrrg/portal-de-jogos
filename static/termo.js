@@ -1,5 +1,3 @@
-// Arquivo: static/termo.js (VERSÃO FINAL COM LÓGICA DE FOCO)
-
 document.addEventListener('DOMContentLoaded', () => {
     // --- Seleção de Elementos ---
     const grid = document.getElementById('termo-grid');
@@ -7,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageArea = document.getElementById('message-area');
     const winStreakCounter = document.getElementById('win-streak-counter');
     const endGameModal = document.getElementById('end-game-modal');
-    // ... (resto da seleção do modal)
     const modalTitle = document.getElementById('modal-title');
     const modalWord = document.getElementById('modal-word');
     const modalStreak = document.getElementById('modal-streak');
@@ -33,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "enter z x c v b n m backspace"
     ];
 
-    // --- Funções de Lógica de Foco e Digitação (NOVAS) ---
+    // --- Funções de Lógica de Foco e Digitação ---
     
     function setFocus(index) {
         // Remove o foco antigo
@@ -132,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Funções de Interface (Atualizadas) ---
+    // --- Funções de Interface ---
 
     function createGrid() {
         for (let i = 0; i < MAX_TENTATIVAS; i++) {
@@ -160,14 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function createKeyboard() { /* ... (Função igual à anterior) ... */ }
-    function applyFeedback(palavraExibida, feedback, row) { /* ... (Função igual à anterior) ... */ }
-    function updateKeyboardColors(letrasUsadas) { /* ... (Função igual à anterior) ... */ }
-    function showMessage(msg, permanent = false) { /* ... (Função igual à anterior) ... */ }
-    function shakeRow(row) { /* ... (Função igual à anterior) ... */ }
-    function finalizarJogo(status, palavraSecreta) { /* ... (Função igual à anterior) ... */ }
+    function createKeyboard() 
+    function applyFeedback(palavraExibida, feedback, row) 
+    function updateKeyboardColors(letrasUsadas) 
+    function showMessage(msg, permanent = false) 
+    function shakeRow(row) 
+    function finalizarJogo(status, palavraSecreta) 
     
-    // --- Funções Completas (para garantir que não falte nada) ---
+    // --- Funções Completas  ---
     function createKeyboard() {
         keys.forEach(row => {
             const rowDiv = document.createElement('div');
@@ -197,8 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tile.textContent = palavraExibida[j];
         
         setTimeout(() => {
-            // --- CORREÇÃO AQUI ---
-            tile.classList.add(feedback[j]); // <-- Trocado de 'i' para 'j'
+            tile.classList.add(feedback[j]); 
         }, j * 150); // Delay crescente para efeito cascata
         
         tile.classList.add('flip'); // Adiciona animação de flip
